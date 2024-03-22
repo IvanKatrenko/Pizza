@@ -13,7 +13,13 @@
   gap: 30px;
 }
 .header__logo {
-  width: 120px;
+  width: 100%;
+  padding: 0 20px;
 }
 .header__cart {
+  color: var(--dark);
+}
+
+.header__cart:hover {
+  color: var(--orange);
 }

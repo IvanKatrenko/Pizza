@@ -1,9 +1,9 @@
 :root {
   --white: #fff;
-  -beige: c1ab91;
-  --dark: #2c2826;
-  --orange: #ff8a00;
-  --light: #fbf3e8;
+  -beige: #6e5f4e;
+  --dark: #232121;
+  --orange: #eda756;
+  --light: #fcfaf7;
 }
 html {
   position: relative;
