@@ -90,3 +90,12 @@ iframe {
 .svg-sprite{
     display: none;
 }
+
+@media (width >= 540px) {
+  body{
+    background-color: rgb(243, 202, 150);
+  }
+  .container{
+    --offset-container: 40px
+  }
+}

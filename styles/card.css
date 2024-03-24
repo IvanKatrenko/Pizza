@@ -19,17 +19,19 @@
   font-size: 20px;
   text-align: center;
   color: var(--dark);
+  margin-bottom: 4px;
 }
 .card__info {
   display: flex;
   justify-content: center;
   font-size: 16px;
   color: var(--beige);
+  margin-bottom: 18px;
+  gap: 5px;
 }
 .card__price {
   font-weight: 600;
   color: var(--dark);
-  margin-bottom: 18px;
 }
 .card__weight {
 }

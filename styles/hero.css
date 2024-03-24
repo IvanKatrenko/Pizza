@@ -15,7 +15,7 @@
   width: calc(100vw / (320 / 261));
   height: calc(100vw / (320 / 230));
   background-repeat: no-repeat;
-  background-image: url(../img/logo.png);
+  background-image: url(/img/logo.png);
   background-size: contain;
   right: calc(var(--offset-container) + 7px);
   max-width: 380px;
@@ -50,4 +50,6 @@
   color: var(--orange);
   font-size: 14px;
   font-weight: 600;
+}
+@media (width >= 540px) {
 }
