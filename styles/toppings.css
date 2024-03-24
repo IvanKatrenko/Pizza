@@ -49,12 +49,43 @@
   appearance: none;
 }
 .toppings__checkbox:checked + .toppings__label {
-  color: var(--orange);
-  background: var(--orange);
+  color: var(--white);
+  background: #d2946e;
+  border: 1px solid #f0443b;
 }
 
 .toppings__checkbox:focus-visible + .toppings__label {
   background: var(--white);
-  border: 1px solid #794202;
-  color: var(--orange);
+  border: 1px solid #d2946e;
+  color: transparent;
+}
+
+@media (width >= 650px) {
+  .topping {
+    padding: 32px 0;
+  }
+  .toppings__close {
+    font-size: 24px;
+  }
+  .toppings__label {
+    font-size: 20px;
+  }
+}
+
+@media (width >= 860px) {
+  .toppings__close {
+    display: none;
+  }
+  .toppings__title {
+    position: static;
+    transform: none;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .toppings__list {
+    display: flex;
+    max-height: none;
+  }
 }
