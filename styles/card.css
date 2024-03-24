@@ -62,12 +62,14 @@
   }
   .card__title {
     font-size: 24px;
-    margin-bottom: 4px;
   }
-}
-
-@media (width >= 860px) {
-}
-
-@media (width >= 1140px) {
+  .card__info {
+    gap: 8px;
+    font-style: 22px;
+    margin-bottom: 24px;
+  }
+  .card__button {
+    font-size: 20px;
+    color: var(--orange);
+  }
 }
