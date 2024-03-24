@@ -3,8 +3,14 @@
 }
 
 .pizza__title {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--dark);
+  margin-bottom: 24px;
 }
 .pizza__list {
-}
-.pizza__item {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
 }

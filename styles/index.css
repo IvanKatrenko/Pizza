@@ -30,6 +30,7 @@ body {
   font-size: 16px;
   color: var(--dark);
   background-color: var(--light);
+  font-weight: 400;
 }
 
 img,
@@ -81,7 +82,7 @@ iframe {
 
 .container {
 --offset-container: 14px
-  max-width: calc(1300px + var(--offset-container) * 2);
+  max-width: calc(var(--offset-container) * 2 + 1300px);
   padding: 0 var(--offset-container);
   margin: 0 auto;
 }

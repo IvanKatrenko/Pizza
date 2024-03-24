@@ -1,6 +1,7 @@
+@import "/styles/index.css";
 @import "/styles/header.css";
 @import "/styles/hero.css";
 @import "/styles/toppings.css";
 @import "/styles/pizza.css";
+@import "/styles/card.css";
 @import "/styles/footer.css";
-@impoert "/styles/card.css";
