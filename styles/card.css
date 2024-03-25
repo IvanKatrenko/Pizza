@@ -1,6 +1,8 @@
 .card {
   position: relative;
   padding-top: 34px;
+  display: flex;
+  flex-direction: column;
 }
 .card__image {
   position: absolute;
@@ -13,13 +15,16 @@
   background: var(--white);
   padding: 50px 10px 10px;
   border-radius: 14px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 .card__title {
   font-weight: 500;
   font-size: 20px;
   text-align: center;
   color: var(--dark);
-  margin-bottom: 4px;
+  flex-grow: 1;
 }
 .card__info {
   display: flex;
@@ -27,15 +32,13 @@
   font-size: 16px;
   color: var(--beige);
   margin-bottom: 18px;
-  gap: 5px;
 }
 .card__price {
   font-weight: 600;
   color: var(--dark);
 }
-.card__weight {
-}
 .card__button {
+  display: block;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.25;
