@@ -44,6 +44,10 @@
   cursor: pointer;
   border: 1px solid transparent;
 }
+.toppings__label:hover {
+  background: var(--white);
+  color: var(--orange);
+}
 .toppings__checkbox {
   position: absolute;
   appearance: none;
@@ -60,6 +64,33 @@
   color: transparent;
 }
 
+.toppings__checkbox:focus-visible + .toppings__label:hover {
+  color: var(--dark);
+}
+/* reset click */
+.toppings__reset {
+  display: block;
+  font-weight: 600;
+  background: var(--white);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  color: var(--orange);
+  cursor: pointer;
+  line-height: 1;
+  border: 1px solid transparent;
+}
+.toppings__reset:hover {
+  color: var(--beige);
+  background: var(--orange);
+}
+
+.toppings__reset:focus-visible {
+  color: var(--white);
+  background: #d2946e;
+  border: 1px solid #f0443b;
+}
+
 @media (width >= 650px) {
   .topping {
     padding: 32px 0;
@@ -68,6 +99,9 @@
     font-size: 24px;
   }
   .toppings__label {
+    font-size: 20px;
+  }
+  .toppings__reset {
     font-size: 20px;
   }
 }

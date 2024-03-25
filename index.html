@@ -41,56 +41,58 @@
                 </svg>                
         </button>
 
-        <ul class="toppings__list">
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="1" name="topping" type="checkbox" value="Hard cheese">
-              <label class="toppings__label" for="1">Hard cheese</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="2" name="topping" type="checkbox" value="Mozzarella">
-              <label class="toppings__label" for="2">Mozzarella</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="3" name="topping" type="checkbox" value="Blue cheese">
-              <label class="toppings__label" for="3">Blue cheese</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="4" name="topping" type="checkbox" value="Pepperoni">
-              <label class="toppings__label" for="4">Pepperoni</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="5" name="topping" type="checkbox" value="Ham">
-              <label class="toppings__label" for="5">Ham</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="6" name="topping" type="checkbox" value="Chicken">
-              <label class="toppings__label" for="6">Chicken</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="7" name="topping" type="checkbox" value="Shrimps">
-              <label class="toppings__label" for="7">Shrimps</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="8" name="topping" type="checkbox" value="Tomato">
-              <label class="toppings__label" for="8">Tomato</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="9" name="topping" type="checkbox" value="Bell pepper">
-              <label class="toppings__label" for="9">Bell pepper</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="10" name="topping" type="checkbox" value="A pineapple">
-              <label class="toppings__label" for="10">A pineapple</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="11" name="topping" type="checkbox" value="Onion">
-              <label class="toppings__label" for="11">Onion</label>
-          </li>
-          <li class="toppings__item">
-              <input class="toppings__checkbox" id="12" name="topping" type="checkbox" value="Mushrooms id="1"">
-              <label class="toppings__label" for="12">Mushrooms</label>
-          </li>
-        </ul>
+        <form class="toppings__form">
+            <ul class="toppings__list">
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="1" name="topping" type="checkbox" value="Hard cheese">
+                    <label class="toppings__label" for="1">Hard cheese</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="2" name="topping" type="checkbox" value="Mozzarella">
+                    <label class="toppings__label" for="2">Mozzarella</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="3" name="topping" type="checkbox" value="Blue cheese">
+                    <label class="toppings__label" for="3">Blue cheese</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="4" name="topping" type="checkbox" value="Pepperoni">
+                    <label class="toppings__label" for="4">Pepperoni</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="5" name="topping" type="checkbox" value="Ham">
+                    <label class="toppings__label" for="5">Ham</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="6" name="topping" type="checkbox" value="Chicken">
+                    <label class="toppings__label" for="6">Chicken</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="7" name="topping" type="checkbox" value="Shrimps">
+                    <label class="toppings__label" for="7">Shrimps</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="8" name="topping" type="checkbox" value="Tomato">
+                    <label class="toppings__label" for="8">Tomato</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="9" name="topping" type="checkbox" value="Bell pepper">
+                    <label class="toppings__label" for="9">Bell pepper</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="10" name="topping" type="checkbox" value="A pineapple">
+                    <label class="toppings__label" for="10">A pineapple</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="11" name="topping" type="checkbox" value="Onion">
+                    <label class="toppings__label" for="11">Onion</label>
+                </li>
+                <li class="toppings__item">
+                    <input class="toppings__checkbox" id="12" name="topping" type="checkbox" value="Mushrooms">
+                    <label class="toppings__label" for="12">Mushrooms</label>
+                </li>
+              </ul>
+        </form>
       </div>
     </section>
 
@@ -99,7 +101,7 @@
         <h2 class="pizza__title">Pizza</h2>
 
         <ul class="pizza__list">
-          <li class="pizza__item">
+          <!-- <li class="pizza__item">
             <article class="card">
               <img class="card__image" src="img/Frame1.png" alt="Маргарита">
 
@@ -268,7 +270,7 @@
               <button class="card__button">Choose</button>
               </div>
             </article>
-          </li>
+          </li> -->
 
 
         </ul>
@@ -291,6 +293,52 @@
     </div>
   </footer>
   <script src="/js/main.js" type="module"></script>
+
+  <div class="modal modal-pizza">
+    <div class="modal__main modal-pizza__main">
+        <img class="modal__image" src="/img/Frame1.png" alt="with mushrooms">
+        <h3 class="modal__title">With mushrooms</h3>
+
+        <p class="modal__description">Mushrooms, cheese, tomato, papryka, onion</p>
+
+        <p class="modal__info">
+            <span class="modal__price">490 zl</span>
+            <span class="modal__divider">/</span>
+            <span class="modal__weight">25 cm</span>
+        </p>
+        <form class="modal__form">
+            <fieldset class="modal-pizza__fieldset">
+                <input class="modal-pizza__checkbox" id="thick" name="crust" type="radio" value="thick">
+                <label class="modal-pizza__label" for="thick">Thick crust</label>
+
+                <input class="modal-pizza__checkbox" id="thin" name="crust" type="radio" value="thin" checked>
+                <label class="modal-pizza__label" for="thin">Thin dough</label>
+            </fieldset>
+
+            <fieldset class="modal-pizza__fieldset">
+                <input class="modal-pizza__checkbox" id="25cm" name="size" type="radio" value="25cm">
+                <label class="modal-pizza__label" for="25cm">25 cm</label>
+
+                <input class="modal-pizza__checkbox" id="30cm" name="size" type="radio" value="30cm" checked>
+                <label class="modal-pizza__label" for="30cm">30 cm</label>
+
+                <input class="modal-pizza__checkbox" id="35cm" name="size" type="radio" value="35cm" >
+                <label class="modal-pizza__label" for="35cm">35 cm</label>
+            </fieldset>
+
+            <button class="modal__button">Add to cart</button>
+
+        </form>
+
+        <button class="modal__close">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="14.8333" y="4" width="0.851136" height="15.3204" transform="rotate(45 14.8333 4)" fill="#C1AB91"/>
+                <rect x="4" y="4.60181" width="0.851136" height="15.3204" transform="rotate(-45 4 4.60181)" fill="#C1AB91"/>
+            </svg>
+        </button>
+
+    </div>
+  </div>
 </body>
 
 </html>
