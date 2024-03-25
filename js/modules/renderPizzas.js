@@ -27,8 +27,11 @@ const createCard = (data) => {
     return card;
 }
 
-export const renderPizzas = async () => {
-    const pizzas = await getData('https://go-go-pizza-api-9xdt.onrender.com/api/products');
+export const renderPizzas = async (toppings) => {
+    const pizzas = await getData(
+        `https://go-go-pizza-api-9xdt.onrender.com/api/products${toppings ? ` ? toppings = ${toppings}` : ''
+        }`,
+    );
     const pizzaList = document.querySelector('.pizza__list');
     pizzaList.textContent = '';
 
@@ -40,4 +43,5 @@ export const renderPizzas = async () => {
         return item;
     })
     pizzaList.append(...items);
-}
+};
+

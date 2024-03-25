@@ -1,11 +1,11 @@
-import { hideLoader, showLoader } from "./loader";
+import { hideLoader, showLoader } from "./loader.js";
 
 export const getData = async (url) => {
     showLoader();
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`Error fetching pizza products: ${response.status}`);
+            throw new Error('Error fetching pizza products');
         }
         return await response.json();
     } catch (error) {
