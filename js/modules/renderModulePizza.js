@@ -1,3 +1,6 @@
+import { cartControl } from "./cartControl";
+import { changeFirstUpperCase, createLabel, createRadioInput } from "./helpers";
+
 
 //works with modal
 export const renderModulePizza = (id, images, name, price, toppings) => {
@@ -5,38 +8,139 @@ export const renderModulePizza = (id, images, name, price, toppings) => {
     modalPizzaMain.textContent = '';
     let size = Object.keys(price[0]);
 
-    //picture modal
+    //picture modal <img class="modal__image" src="/img/Frame1.png" alt="with mushrooms">
     const picture = document.createElement('picture');
     const source = document.createElement('source');
-    source.srcset = image[1];
+    source.srcset = images[1];
     source.type = 'image/webp';
 
     const img = document.createElement('img');
     img.classList.add('modal__image');
     img.src = images[0];
     img.alt= name.en;
-
     picture.append(source, img);
 
-    //header modal
+    //header modal <h3 class="modal__title">With mushrooms</h3>
     const title = document.createElement('h3');
     title.classList.add('modal__title');
-    title.textContent = name.en[0].toUpperCase() + name.en.slice(1).toLowerCase() ;
+    title.textContent = changeFirstUpperCase(name.en);
 
-    modalPizzaMain.append(picture,title);
+    // <p class="modal__description">Mushrooms, cheese, tomato, papryka, onion</p>
+    const toppingsElement = document.createElement('p');
+    toppingsElement.classList.add('modal__description');
+    toppingsElement.textContent = changeFirstUpperCase(toppings.en);
 
+    // <p class="modal__info">
+    //     <span class="modal__price">490 zl</span>
+    //     <span>/</span>
+    //     <span class="modal__size">25 cm</span>
+    // </p>
+    // <form class="modal__form">
+    const priceSizeInfo = document.createElement('p');
+    priceSizeInfo.classList.add('modal__info');
+
+    const priceElement = document.createElement('span');
+    priceElement.classList.add('modal__price');
+    const slashElement = document.createElement('span');
+    slashElement.classList.add('modal__divider');
+    const sizeElement = document.createElement('span');
+    sizeElement.classList.add('modal__size');
+
+    priceSizeInfo.append(priceElement, slashElement, sizeElement);
+
+// price and size
+const updatePrice = () => { 
+    // selects the input element of the selected size
+    const selectedSizeInput = form.querySelector('input[name="size"]:checked');
+    size = selectedSizeInput.value;
+    priceElement.textContent = `${price[size]} zl`;
+    sizeElement.textContent = `${parseInt(size)} cm`;
 }
 
-// <img class="modal__image" src="/img/Frame1.png" alt="with mushrooms">
-// <h3 class="modal__title">With mushrooms</h3>
+    // <form class="modal__form"> and next fieldset and input,label
+    const form = document.createElement('form');
+    form.id=id;
+    form.classList.add('modal__form');
+    const groupFieldset = document.createElement('div');
+    groupFieldset.classList.add('modal-pizza__group');
 
-// <p class="modal__description">Mushrooms, cheese, tomato, papryka, onion</p>
+    const fieldsetCrust = document.createElement('fieldset');
+    fieldsetCrust.classList.add('modal-pizza__fieldset');
 
-// <p class="modal__info">
-//     <span class="modal__price">490 zl</span>
-//     <span class="modal__divider">/</span>
-//     <span class="modal__size">25 cm</span>
-// </p>
+    const thickInput = createRadioInput('modal-pizza__radio', 'thick', 'crust', 'thick');
+    const thickLabel = createLabel('modal-pizza__label', 'thick', 'Thick crust');
+    
+    const thinInput = createRadioInput('modal-pizza__radio', 'thin', 'crust', 'thin');
+    thinInput.checked = true;
+    const thinLabel = createLabel('modal-pizza__label', 'thin', 'Thin dough');
+
+    fieldsetCrust.append(thickInput, thickLabel, thinInput, thinLabel);
+
+    const fieldsetSize = document.createElement('fieldset');
+    fieldsetSize.classList.add('modal-pizza__fieldset');
+
+    const sizeInputs = Object.keys(price).map(size => createRadioInput('modal-pizza__radio', 'size', size, 'size'));
+    sizeInputs[0].checked = true;
+
+    sizeInputs.forEach(input =>{
+        const label = createLabel('modal-pizza__label', input.id, `${parseInt(input.value)} cm`);
+        input.addEventListener('change', updatePrice)
+        fieldsetSize.append(input, label);
+    });
+
+    const btnAddToCart = document.createElement('button');
+    btnAddToCart.classList.add('modal__button');
+    btnAddToCart.textContent = 'Add to cart';
+
+    groupFieldset.append(fieldsetCrust, fieldsetSize);
+    form.append(groupFieldset, btnAddToCart);
+
+    const closeBtn = document.createElement('button');
+    closeBtn.classList.add('modal__close');
+    closeBtn.textContent = `
+
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14.8333" y="4" width="0.851136" height="15.3204" transform="rotate(45 14.8333 4)" fill="#C1AB91"/>
+      <rect x="4" y="4.60181" width="0.851136" height="15.3204" transform="rotate(-45 4 4.60181)" fill="#C1AB91"/>
+    </svg>
+    
+    `;
+
+    modalPizzaMain.append(picture, title, toppingsElement, priceSizeInfo, form, closeBtn);
+
+    updatePrice();
+
+    let timerId = null;
+    //add to cart !!!
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+
+        const product = {
+            carId: crypto.randomUUID(), // generate random id
+            id,
+            size: formData.get('size'), // get the value of the selected size
+            crust: formData.get('crust'), // get the value of the selected crust
+        };
+
+        cartControl.btnAddToCart(product); // add to cart
+
+        btnAddToCart.disabled = true;
+        btnAddToCart.textContent = 'Added';
+
+       timerId = setTimeout(() => { // 3 seconds delay
+            btnAddToCart.disabled = false;
+            btnAddToCart.textContent = 'Add to cart';
+        }, 3000)
+    });
+    form.addEventListener('reset', () => { // reset button
+        clearTimeout(timerId);
+        btnAddToCart.disabled = false;
+        btnAddToCart.disabled = 'Add to cart';
+    })
+
+}
 // <form class="modal__form">
    
 //     <div class="modal-pizza__group">

@@ -1,4 +1,5 @@
 import { getData } from "./getData.js";
+import { changeFirstUpperCase } from "./helpers.js";
 import { modalController } from "./modalController.js";
 import { renderModulePizza } from "./renderModulePizza.js";
 
@@ -22,9 +23,8 @@ const createCard = (data) => {
     </picture>
             
             <div class="card__content">
-                <h3 class="card__title">${data.name['en'][0].toUpperCase()}${data.name['en']
-            .slice(1)
-            .toLowerCase()}</h3>
+                <h3 class="card__title">${changeFirstUpperCase(data.name['en'])}
+</h3>
 
                 <p class="card__info">
                   <span class="card__price">${data.prices['25cm']}</span>
