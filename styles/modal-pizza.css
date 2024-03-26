@@ -1,0 +1,131 @@
+.modal-pizza__main {
+  position: relative;
+  max-width: 290px;
+  padding: 24px 16px 16px;
+}
+.modal__image {
+  width: 180px;
+  margin: 0 auto 12px;
+}
+.modal__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.modal__description {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.modal__info {
+  display: flex;
+  font-size: 14px;
+  gap: 4px;
+  color: (var--beige);
+  margin-bottom: 20px;
+}
+.modal__price {
+  font-weight: 600;
+  color: var(--dark);
+}
+.modal-pizza__fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: space-around;
+  margin-bottom: 8px;
+}
+.modal-pizza__fieldset:last-child {
+  margin-bottom: 0;
+}
+.modal-pizza__group {
+  margin-bottom: 20px;
+}
+
+.modal-pizza__label {
+  flex-grow: 1;
+  text-align: center;
+  display: block;
+  background: transparent;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 14px;
+  color: var(--beige);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.modal-pizza__label:hover {
+  background: var(--orange);
+  color: var(--biege);
+}
+
+.modal-pizza__radio {
+  position: absolute;
+  appearance: none;
+}
+.modal-pizza__radio:checked + .modal-pizza__label {
+  color: var(--white);
+  background: #d2946e;
+  border: 1px solid #f5da55;
+}
+
+.modal-pizza__radio:focus-visible + .modal-pizza__label {
+  background: var(--orange);
+  border: 1px solid #d2946e;
+  color: transparent;
+}
+
+.modal-pizza__radio:focus-visible + .modal-pizza__label:hover {
+  color: var(--white);
+  background: var(--beige);
+}
+
+.modal-pizza__radio:checked + .modal-pizza__label:hover {
+  color: var(--orange);
+  background: var(--light);
+}
+
+.modal__button {
+  display: block;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+  background: var(--orange);
+  color: var(--light);
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin: 0 auto;
+  width: 100%;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  line-height: 1.4;
+}
+
+.modal__button:hover {
+  background: var(--light);
+  color: var(--orange);
+}
+
+.modal__button:focus-visible {
+  background: var(--light);
+  color: var(--orange);
+}
+
+.modal__button:disabled {
+  opacity: 0.5;
+}
+
+@media (width >= 650px) {
+}
+
+@media (width >= 860px) {
+}
+
+@media (width >= 1140px) {
+}

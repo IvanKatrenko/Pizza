@@ -6,6 +6,7 @@
     <title>Pizza</title>
     <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="/styles/default.css">
+    
 </head>
 <body>
 
@@ -41,7 +42,7 @@
                 </svg>                
         </button>
 
-        <form class="toppings__form">
+        <form class="toppings__form" id="toppings">
             <ul class="toppings__list">
                 <li class="toppings__item">
                     <input class="toppings__checkbox" id="1" name="topping" type="checkbox" value="Hard cheese">
@@ -101,6 +102,7 @@
         <h2 class="pizza__title">Pizza</h2>
 
         <ul class="pizza__list">
+            
           <!-- <li class="pizza__item">
             <article class="card">
               <img class="card__image" src="img/Frame1.png" alt="Маргарита">
@@ -292,7 +294,8 @@
       </ul>
     </div>
   </footer>
-  <script src="/js/main.js" type="module"></script>
+
+  <!-- modal -->
 
   <div class="modal modal-pizza">
     <div class="modal__main modal-pizza__main">
@@ -304,27 +307,30 @@
         <p class="modal__info">
             <span class="modal__price">490 zl</span>
             <span class="modal__divider">/</span>
-            <span class="modal__weight">25 cm</span>
+            <span class="modal__size">25 cm</span>
         </p>
         <form class="modal__form">
-            <fieldset class="modal-pizza__fieldset">
-                <input class="modal-pizza__checkbox" id="thick" name="crust" type="radio" value="thick">
-                <label class="modal-pizza__label" for="thick">Thick crust</label>
-
-                <input class="modal-pizza__checkbox" id="thin" name="crust" type="radio" value="thin" checked>
-                <label class="modal-pizza__label" for="thin">Thin dough</label>
-            </fieldset>
-
-            <fieldset class="modal-pizza__fieldset">
-                <input class="modal-pizza__checkbox" id="25cm" name="size" type="radio" value="25cm">
-                <label class="modal-pizza__label" for="25cm">25 cm</label>
-
-                <input class="modal-pizza__checkbox" id="30cm" name="size" type="radio" value="30cm" checked>
-                <label class="modal-pizza__label" for="30cm">30 cm</label>
-
-                <input class="modal-pizza__checkbox" id="35cm" name="size" type="radio" value="35cm" >
-                <label class="modal-pizza__label" for="35cm">35 cm</label>
-            </fieldset>
+           
+            <div class="modal-pizza__group">
+                <fieldset class="modal-pizza__fieldset">
+                    <input class="modal-pizza__radio" id="thick" name="crust" type="radio" value="thick">
+                    <label class="modal-pizza__label" for="thick">Thick crust</label>
+    
+                    <input class="modal-pizza__radio" id="thin" name="crust" type="radio" value="thin" checked>
+                    <label class="modal-pizza__label" for="thin">Thin dough</label>
+                </fieldset>
+    
+                <fieldset class="modal-pizza__fieldset">
+                    <input class="modal-pizza__radio" id="25cm" name="size" type="radio" value="25cm">
+                    <label class="modal-pizza__label" for="25cm">25 cm</label>
+    
+                    <input class="modal-pizza__radio" id="30cm" name="size" type="radio" value="30cm" checked>
+                    <label class="modal-pizza__label" for="30cm">30 cm</label>
+    
+                    <input class="modal-pizza__radio" id="35cm" name="size" type="radio" value="35cm" >
+                    <label class="modal-pizza__label" for="35cm">35 cm</label>
+                </fieldset>
+            </div>
 
             <button class="modal__button">Add to cart</button>
 
@@ -339,6 +345,9 @@
 
     </div>
   </div>
+
+  <script src="/js/main.js" type="module"></script>
+
 </body>
 
 </html>

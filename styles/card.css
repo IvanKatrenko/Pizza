@@ -44,6 +44,7 @@
   line-height: 1.25;
   color: var(--orange);
   border: 1px solid var(--orange);
+  background: var(--light);
   padding: 8px 20px;
   border-radius: 30px;
   margin: 0 auto;
