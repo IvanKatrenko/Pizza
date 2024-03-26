@@ -1,5 +1,6 @@
 import { getData } from "./getData.js";
 import { modalController } from "./modalController.js";
+import { renderModulePizza } from "./renderModulePizza.js";
 
 //pizza is being formed
 
@@ -61,9 +62,15 @@ export const renderPizzas = async (toppings) => {
         pizzaList.append(...items);
 
         modalController({
-            modal: '.modal-piiza',
+            modal: '.modal-pizza',
             btnOpen: '.card__button',
             btnClose: '.modal__close',
+            async cbOpen(btnOpen) {
+                const pizza = await getData(
+                    `https://go-go-pizza-api-9xdt.onrender.com/api/products/${btnOpen.dataset.id}`,
+                );
+                renderModulePizza(pizza);
+            }
         })
     } else {
         pizzaTitle.textContent = 'We dont have such pizza';

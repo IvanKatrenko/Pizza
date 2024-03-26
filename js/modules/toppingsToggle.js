@@ -1,5 +1,5 @@
 // works with toppings(open and close)
-const toppingsToggle = () => {
+export const toppingsToggle = () => {
     const toppingsClose = document.querySelector('.toppings__close');
     const toppingsList = document.querySelector('.toppings__list');
 
