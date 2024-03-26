@@ -1,4 +1,7 @@
 import { getData } from "./getData.js";
+import { modalController } from "./modalController.js";
+
+//pizza is being formed
 
 const btnReset = document.querySelector('button');
 btnReset.classList.add('pizza__reset-toppings');
@@ -56,6 +59,12 @@ export const renderPizzas = async (toppings) => {
         })
 
         pizzaList.append(...items);
+
+        modalController({
+            modal: '.modal-piiza',
+            btnOpen: '.card__button',
+            btnClose: '.modal__close',
+        })
     } else {
         pizzaTitle.textContent = 'We dont have such pizza';
         pizzaTitle.after(btnReset);
