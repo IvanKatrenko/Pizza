@@ -7,6 +7,7 @@ export const getData = async (url) => {
         if (!response.ok) {
             throw new Error('Error fetching pizza products');
         }
+
         return await response.json();
     } catch (error) {
         console.log(`Error fetching pizza products: ${error}`);

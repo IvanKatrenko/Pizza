@@ -117,7 +117,7 @@ const updatePrice = () => {
 
         const formData = new FormData(form);
 
-        const product = {
+        const product = { // product object
             carId: crypto.randomUUID(), // generate random id
             id,
             size: formData.get('size'), // get the value of the selected size
