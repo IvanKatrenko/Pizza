@@ -1,5 +1,5 @@
-import { cartControl } from "./cartControl";
-import { changeFirstUpperCase, createLabel, createRadioInput } from "./helpers";
+import { cartControl } from "./cartControl.js";
+import { changeFirstUpperCase, createLabel, createRadioInput } from "./helpers.js";
 
 
 //works with modal

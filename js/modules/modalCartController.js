@@ -1,6 +1,6 @@
-import { cartControl } from "./cartControl";
-import { getData } from "./getData";
-import { changeFirstUpperCase } from "./helpers";
+import { cartControl } from "./cartControl.js";
+import { getData } from "./getData.js";
+import { changeFirstUpperCase } from "./helpers.js";
 
 const cartListElem = document.querySelector('.modal-cart__list');
 const cartPriceElem = document.querySelector('.modal-cart__price');
